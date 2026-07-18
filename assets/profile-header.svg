@@ -1,0 +1,57 @@
+<svg width="1200" height="340" viewBox="0 0 1200 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title description">
+  <title id="title">Areeb Azhar</title>
+  <desc id="description">Developer, builder, and lifelong learner. Building useful software with curiosity and care.</desc>
+
+  <defs>
+    <linearGradient id="background" x1="70" y1="20" x2="1130" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07111F"/>
+      <stop offset="0.52" stop-color="#0B1D35"/>
+      <stop offset="1" stop-color="#111A3A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="120" y1="150" x2="800" y2="250" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67E8F9"/>
+      <stop offset="0.5" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <radialGradient id="cyanGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(190 50) rotate(44) scale(380 250)">
+      <stop stop-color="#22D3EE" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="violetGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1050 300) rotate(-138) scale(410 260)">
+      <stop stop-color="#8B5CF6" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" stroke="#B9D7F5" stroke-opacity="0.055"/>
+    </pattern>
+    <filter id="shadow" x="40" y="36" width="1120" height="260" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#020617" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="340" rx="28" fill="url(#background)"/>
+  <rect width="1200" height="340" rx="28" fill="url(#cyanGlow)"/>
+  <rect width="1200" height="340" rx="28" fill="url(#violetGlow)"/>
+  <rect width="1200" height="340" rx="28" fill="url(#grid)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="64" y="54" width="1072" height="220" rx="22" fill="#081426" fill-opacity="0.9"/>
+    <rect x="64.75" y="54.75" width="1070.5" height="218.5" rx="21.25" stroke="#8ED7F8" stroke-opacity="0.23" stroke-width="1.5"/>
+  </g>
+
+  <circle cx="99" cy="84" r="6" fill="#FB7185"/>
+  <circle cx="121" cy="84" r="6" fill="#FBBF24"/>
+  <circle cx="143" cy="84" r="6" fill="#34D399"/>
+  <text x="600" y="89" fill="#7893AE" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" text-anchor="middle">profile / README.md</text>
+  <path d="M65 108H1135" stroke="#9CC5E6" stroke-opacity="0.14"/>
+
+  <text x="112" y="165" fill="#67E8F9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="24">~/</text>
+  <text x="157" y="174" fill="url(#accent)" font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="52" font-weight="700" letter-spacing="4">AREEB AZHAR</text>
+  <text x="160" y="211" fill="#A9BCD0" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15" letter-spacing="2.6">DEVELOPER · BUILDER · LIFELONG LEARNER</text>
+
+  <text x="160" y="247" fill="#67E8F9" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">›</text>
+  <text x="181" y="247" fill="#D8E7F5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">building useful software with curiosity and care</text>
+  <rect x="609" y="232" width="8" height="18" rx="1.5" fill="#67E8F9" fill-opacity="0.85"/>
+
+  <text x="1027" y="211" fill="#8ED7F8" fill-opacity="0.16" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="68" font-weight="700" text-anchor="middle">&lt;/&gt;</text>
+</svg>
