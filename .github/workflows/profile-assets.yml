@@ -73,6 +73,15 @@ jobs:
             assets/generated/contributions-dark.svg?palette=github-dark&color_snake=#d8ff3e&color_dots=#242b23,#3b4c25,#5f7a27,#90b62e,#c1e63e
             assets/generated/contributions-light.svg?palette=github-light&color_snake=#b9432d&color_dots=#e6e8de,#c9dba2,#9dbb64,#71963c,#52690f
 
+      - name: Normalize SVG formatting
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          for path in Path("assets/generated").glob("*.svg"):
+              source = path.read_text(encoding="utf-8")
+              path.write_text("\n".join(line.rstrip() for line in source.splitlines()) + "\n", encoding="utf-8")
+          PY
+
       - name: Upload generated visuals
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
@@ -81,3 +90,53 @@ jobs:
           if-no-files-found: error
           retention-days: 7
 
+  publish:
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Check out latest profile
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+
+      - name: Download generated visuals
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: profile-visuals
+          path: assets/generated
+
+      - name: Validate generated SVGs without executing them
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          expected = {f"{kind}-{theme}.svg" for kind in ("stats", "languages", "contributions") for theme in ("dark", "light")}
+          folder = Path("assets/generated")
+          assert {p.name for p in folder.iterdir()} == expected, "Unexpected generated files"
+          for name in expected:
+              path = folder / name
+              assert path.is_file() and not path.is_symlink() and path.stat().st_size < 2_000_000, path
+              source = path.read_text(encoding="utf-8")
+              assert "<!DOCTYPE" not in source and "<!ENTITY" not in source, path
+              root = ET.fromstring(source)
+              assert root.tag == "{http://www.w3.org/2000/svg}svg", path
+              for node in root.iter():
+                  assert node.tag.rsplit("}", 1)[-1] not in {"script", "foreignObject"}, path
+                  assert not any(key.lower().startswith("on") for key in node.attrib), path
+          PY
+
+      - name: Commit refreshed visuals
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/generated/*.svg
+          if git diff --cached --quiet; then
+            echo "Visuals are already up to date."
+            exit 0
+          fi
+          git commit -m "Refresh generated profile visuals"
+          git pull --rebase origin main
+          git push origin HEAD:main
