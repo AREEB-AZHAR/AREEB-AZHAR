@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">Areeb Azhar — from systems to screens</title>
+  <desc id="description">Light profile banner with a lime geometric asterisk. Rust, web, and interactive systems.</desc>
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" stroke="#596149" stroke-opacity="0.10" />
+    </pattern>
+    <clipPath id="artwork">
+      <rect x="820" y="76" width="330" height="234" rx="8" />
+    </clipPath>
+  </defs>
+
+  <rect x="1" y="1" width="1198" height="358" rx="18" fill="#F3F1E8" stroke="#D7DBCF" stroke-width="2" />
+  <path d="M48 58H1152" stroke="#D7DBCF" />
+  <circle cx="55" cy="31" r="5" fill="#566C17" />
+  <text x="73" y="36" fill="#545D4D" font-family="Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="1.2">AREEB-AZHAR / GITHUB</text>
+  <text x="1152" y="36" fill="#545D4D" font-family="Consolas, 'Liberation Mono', monospace" font-size="14" letter-spacing="1.2" text-anchor="end">SOFTWARE ENGINEERING</text>
+
+  <text x="54" y="164" fill="#171A17" font-family="'Segoe UI', Arial, sans-serif" font-size="88" font-weight="700" letter-spacing="-4">Areeb Azhar<tspan fill="#52690F">.</tspan></text>
+  <text x="59" y="228" fill="#B9432D" font-family="Georgia, 'Times New Roman', serif" font-size="43" font-style="italic" letter-spacing="-1">From systems to screens.</text>
+  <path d="M60 270H744" stroke="#D7DBCF" />
+  <text x="60" y="308" fill="#545D4D" font-family="Consolas, 'Liberation Mono', monospace" font-size="17" letter-spacing="0.5">RUST / WEB / INTERACTIVE SYSTEMS</text>
+  <path d="M716 299H742M733 290L742 299L733 308" stroke="#52690F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <g clip-path="url(#artwork)">
+    <rect x="820" y="76" width="330" height="234" fill="url(#grid)" />
+    <circle cx="985" cy="193" r="110" stroke="#B3BE9C" />
+    <circle cx="985" cy="193" r="78" stroke="#B3BE9C" stroke-dasharray="3 7" />
+    <path d="M820 193H1150M985 76V310" stroke="#B3BE9C" />
+    <g transform="translate(985 193)" fill="#D8FF3E">
+      <rect x="-17" y="-91" width="34" height="182" rx="7" />
+      <rect x="-17" y="-91" width="34" height="182" rx="7" transform="rotate(45)" />
+      <rect x="-17" y="-91" width="34" height="182" rx="7" transform="rotate(90)" />
+      <rect x="-17" y="-91" width="34" height="182" rx="7" transform="rotate(135)" />
+      <circle r="22" fill="#171A17" />
+      <circle r="7" fill="#F3F1E8" />
+    </g>
+    <rect x="1092" y="83" width="20" height="20" rx="3" fill="#B9432D" transform="rotate(12 1102 93)" />
+    <circle cx="866" cy="282" r="7" fill="#B9432D" />
+    <path d="M1121 277V291M1114 284H1128" stroke="#545D4D" stroke-width="2" />
+  </g>
+  <text x="985" y="333" fill="#545D4D" font-family="Consolas, 'Liberation Mono', monospace" font-size="12" letter-spacing="2" text-anchor="middle">IDEA → CODE → EXPERIENCE</text>
+</svg>
